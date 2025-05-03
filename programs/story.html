@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Nest Cafe</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
+    <style>
+        
+        body {
+            background-color: #3B2F2F;
+            color: #FAE3D9;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .banner {
+            background: url('/images/banner.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            font-family: 'Georgia', serif;
+        }
+        .banner h1 {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        .banner p {
+            font-size: 1.2rem;
+        }
+        .story-container {
+            max-width: 800px;
+            margin: auto;
+            background: #A67B5B;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .back-btn {
+            margin-top: 20px;
+        }
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .content {
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                document.querySelector(".spinner-container").style.display = "none";
+                document.querySelector(".content").style.display = "block";
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div class="spinner-container">
+        <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="banner" id="home">
+        <h1>Welcome to Nest Cafe</h1>
+        <p>Enjoy handcrafted coffee with the finest ingredients</p>
+        <a href="/programs/menu.html" class="btn btn-light">View Menu</a>
+    </div><br><br>
+
+    <div class="content">
+        <div class="story-container">
+            <h1>Our Story</h1>
+            <p class="lead">Nest Cafe was born out of a love for coffee and a passion for creating a cozy gathering space. From a small neighborhood cafe to a well-loved destination, our journey has been fueled by the aroma of freshly brewed coffee and the warmth of our community.</p>
+            <p>We believe in sourcing the finest beans, handcrafting every cup, and fostering a welcoming atmosphere for coffee lovers. Join us in celebrating the art of coffee!</p>
+            <a href="/programs/index.html" class="btn btn-warning back-btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

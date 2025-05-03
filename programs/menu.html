@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu - Nest Cafe</title>
+  <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.min.css">
+  <style>
+    body {
+      background-color: #2E1A14;
+      color: #F8EDEB;
+      font-family: 'Georgia', serif;
+    }
+    .menu-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card {
+      background: #8B5E3B;
+      color: #FDFEFE;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+    .featured-drinks {
+      color: #E09F3E;
+    }
+    .navbar {
+      background-color: #4A2C2A !important;
+      font-family: 'Georgia', serif;
+    }
+    footer {
+      background-color: #4A2C2A;
+      color: white;
+      font-family: 'Georgia', serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Nest Cafe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/programs/cafe.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/programs/nav1.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Alert Section -->
+<div class="container mt-4">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>New Arrival!</strong> Try our new Pumpkin Spice Latte. It's a perfect combo for any meal!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+<!-- Menu Section -->
+<section id="menu" class="container my-5">
+  <h2 class="text-center">Our Menu</h2>
+  <div class="row justify-content-center">
+
+    <!-- Burger Card -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <img src="/images/burger.jpg" alt="Burger" class="menu-img" data-bs-toggle="tooltip" data-bs-placement="top" title="Juicy beef patty with fresh veggies and cheese.">
+        <h5 class="card-title">Burger</h5>
+        <p class="card-text">A juicy beef patty with fresh veggies and cheese.</p>
+        <button class="btn btn-warning" data-bs-toggle="popover" data-bs-content="A classic favorite, served with fries.">More Info</button>
+      </div>
+    </div>
+
+    <!-- Pizza Card -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <img src="/images/pizza.jpg" alt="Pizza" class="menu-img" data-bs-toggle="tooltip" data-bs-placement="top" title="Cheese, tomatoes, and fresh toppings baked to perfection.">
+        <h5 class="card-title">Pizza</h5>
+        <p class="card-text">Cheese, tomatoes, and fresh toppings baked to perfection.</p>
+        <button class="btn btn-warning" data-bs-toggle="popover" data-bs-content="Perfect for sharing or enjoying alone!">More Info</button>
+      </div>
+    </div>
+
+    <!-- Sandwich Card -->
+    <div class="col-md-4">
+      <div class="card p-3">
+        <img src="/images/Sandwich.jpg" alt="Sandwich" class="menu-img" data-bs-toggle="tooltip" data-bs-placement="top" title="Freshly made with your choice of bread, meats, and toppings.">
+        <h5 class="card-title">Sandwich</h5>
+        <p class="card-text">Freshly made with your choice of bread, meats, and toppings.</p>
+        <button class="btn btn-warning" data-bs-toggle="popover" data-bs-content="A quick, filling meal. Add chips or a drink!">More Info</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Typeahead (Search Bar) -->
+<section id="search" class="container my-5">
+  <h2 class="text-center">Search Our Menu</h2>
+  <input type="text" class="form-control" id="typeahead" placeholder="Search for food...">
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4">
+  &copy; 2025 Nest Cafe. All Rights Reserved. <br>
+  <a href="#"><i class="fab fa-facebook fa-lg mx-2"></i></a>
+  <a href="#"><i class="fab fa-instagram fa-lg mx-2"></i></a>
+  <a href="#"><i class="fab fa-twitter fa-lg mx-2"></i></a>
+</footer>
+
+<script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js"></script>
+
+<script>
+  // Initialize Tooltip
+  var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+  // Initialize Popover
+  var popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+  var popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+  // Initialize Typeahead
+  var foods = ['Burger', 'Pizza', 'Sandwich'];
+  var searchInput = document.getElementById('typeahead');
+  var typeahead = new Typeahead(searchInput, {
+    source: foods
+  });
+</script>
+
+</body>
+</html>
